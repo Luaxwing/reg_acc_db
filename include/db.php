@@ -88,7 +88,7 @@ class DB{
     // 
     // 做儲存/更新用
     function save($array){
-        // 驗證是否存在
+        // 驗證資料是否存在
         // 若存在則更新內容
         if(isset($array['id']))
         {
@@ -104,7 +104,7 @@ class DB{
             $sql .= " where `id`='{$array['id']}'";
         }
         // 
-        // 若不存在則新增資料
+        // 若不存在則新增一筆資料
         else{
             $sql = "insert into `$this->table` ";
             $cols = "(`" . join("`,`", array_keys($array)) . "`)";
