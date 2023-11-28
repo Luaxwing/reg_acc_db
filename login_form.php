@@ -15,6 +15,7 @@
 </head>
 <body>
    <div class="container">
+    <br><br>
     <div class="w-50 mx-auto">
         <h2>會員登入</h2>
         <form action="./api/login.php" method="post">
@@ -41,5 +42,11 @@
         </form>
     </div>
    </div> 
+
+   <?php
+        include_once "footer.php";
+        ?>
+</body>
+
 </body>
 </html>

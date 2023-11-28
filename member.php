@@ -1,5 +1,5 @@
 <?php 
-include_once "./include/connect.php";
+// include_once "./include/connect.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,33 +11,16 @@ include_once "./include/connect.php";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="nav">
-    <div class="nav-item col-4"></div>
-    <div class="nav-item col-4">
-        <ul class='d-flex justify-content-evenly'>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-    </div>
-    <div class="nav-item col-4">
-        <?php
-        if(isset($_SESSION['user'])){
-            echo "歡迎光臨 ".$_SESSION['user'];
-            echo "<a href='./api/logout.php' class='btn btn-info mx-2'>登出</a>";
-            echo "<a href='member.php' class='btn btn-success mx-2'>會員中心</a>";
-        }else{
-         ?>
-        <a href="reg.php" class="btn btn-primary mx-2">註冊</a>
-        <a href="login_form.php" class="btn btn-success mx-2">登入</a> 
-         <?php
-        }
-        ?>
+<!-- <div class="container"> -->
+<?php
+include_once "header.php";
+?>
         
-    </div>
-</header>   
+ 
+<!-- </div>    -->
+<br><hr>
 <div class="container">
-    <h1>使用者資料</h1>
+    <h2>使用者資料</h2>
     <?php
         if(isset($_SESSION['msg'])){
             echo "<div class='alert alert-warning text-center col-6 m-auto'>";
@@ -80,5 +63,11 @@ include_once "./include/connect.php";
         </div>    
     </form>
 </div>
+
+<?php
+        include_once "footer.php";
+        ?>
+</body>
+
 </body>
 </html>
