@@ -24,12 +24,12 @@ include_once "./include/connect.php";
         <?php
         if(isset($_SESSION['user'])){
             echo "歡迎光臨 ".$_SESSION['user'];
-            echo "<a href='logout.php' class='btn btn-info mx-2'>登出</a>";
+            echo "<a href='./api/logout.php' class='btn btn-info mx-2'>登出</a>";
             echo "<a href='member.php' class='btn btn-success mx-2'>會員中心</a>";
         }else{
          ?>
         <a href="reg.php" class="btn btn-primary mx-2">註冊</a>
-        <a href="./api/login_form.php" class="btn btn-success mx-2">登入</a> 
+        <a href="login_form.php" class="btn btn-success mx-2">登入</a> 
          <?php
         }
         ?>
@@ -47,8 +47,9 @@ include_once "./include/connect.php";
         }
 
 
-        $sql="select * from users where `acc`='{$_SESSION['user']}'";
-        $user=$pdo->query($sql)->fetch();
+        /* $sql="select * from users where `acc`='{$_SESSION['user']}'";
+        $user=$pdo->query($sql)->fetch(); */
+        $user=find('users',['acc'=>"{$_SESSION['user']}"]);
     ?>
     <form action="./api/update.php" method="post" class="col-4 m-auto">
         <div class="input-group my-1">

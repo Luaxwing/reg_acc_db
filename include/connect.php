@@ -2,11 +2,7 @@
 date_default_timezone_set("Asia/Taipei");
 $dsn="mysql:host=localhost;charset=utf8;dbname=member";
 $pdo=new PDO($dsn,'root','');
-// session_start();
-
-
 session_start();
-
 
 
 function all($table = null, $where = '', $other = '')
@@ -37,6 +33,25 @@ function all($table = null, $where = '', $other = '')
     }
 }
 
+function total($table, $id)
+{
+    global $pdo;
+    $sql = "select count(`id`) from `$table` ";
+
+    if (is_array($id)) {
+        foreach ($id as $col => $value) {
+            $tmp[] = "`$col`='$value'";
+        }
+        $sql .= " where " . join(" && ", $tmp);
+    } else if (is_numeric($id)) {
+        $sql .= " where `id`='$id'";
+    } else {
+        echo "錯誤:參數的資料型態比須是數字或陣列";
+    }
+    //echo 'find=>'.$sql;
+    $row = $pdo->query($sql)->fetchColumn();
+    return $row;
+}
 
 function find($table, $id)
 {
