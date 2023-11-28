@@ -43,9 +43,10 @@
     </div>
    </div> 
 
-   <?php
-        include_once "footer.php";
-        ?>
+
+    <?php
+        include_once "./include/footer.php";
+    ?>
 </body>
 
 </body>

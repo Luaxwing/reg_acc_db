@@ -18,7 +18,7 @@
 <body>
     <!-- <div class="container"> -->
     <?php
-    include_once "header.php";
+    include_once "./include/header.php";
     ?>
     <!-- </div> -->
 
@@ -34,7 +34,7 @@
 
 
     <?php
-    include_once "footer.php";
+        include_once "./include/footer.php";
     ?>
 </body>
 
