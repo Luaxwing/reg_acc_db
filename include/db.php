@@ -6,6 +6,7 @@ class DB{
     protected $dsn = "mysql:host=localhost;charset=utf8;dbname=member";
     protected $pdo;
     protected $table;
+//$sql 放置MariaDB 的查找語句
 // 
 // 執行DB時 將自訂義的table 帶入 DB函數
 // PDO:PHP Data Objects_登入
