@@ -151,7 +151,7 @@ class DB{
         }
         return $tmp;
     }
-    // 
+    //  
 }
 
 function dd($array)
