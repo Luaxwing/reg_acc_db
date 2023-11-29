@@ -139,7 +139,7 @@ class DB{
         return $this->pdo->exec($sql);
     }
     // 
-    // 
+    // 受不了重複的程式碼
     function q($sql){
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
